@@ -190,6 +190,13 @@
   border: 0;
   content: "Set the date to today";
 }
+.bootstrap-datetimepicker-widget .datepicker-header-container {
+  text-align: center;
+}
+.bootstrap-datetimepicker-widget .datepicker-header-container > div {
+  display: inline-block;
+  vertical-align: top;
+}
 .bootstrap-datetimepicker-widget .picker-switch {
   text-align: center;
 }
@@ -273,7 +280,7 @@
   width: 54px;
 }
 .bootstrap-datetimepicker-widget table td.cw {
-  font-size: .8em;
+  font-size: 0.8em;
   height: 20px;
   line-height: 20px;
   color: #777777;
