@@ -192,16 +192,19 @@
             },
 
             getDatePickerTemplate = function () {
-                var headTemplate = $('<thead>')
-                        .append($('<tr>')
-                            .append($('<th>').addClass('prev').attr('data-action', 'previous')
-                                .append($('<span>').addClass(options.icons.previous))
-                                )
-                            .append($('<th>').addClass('picker-switch').attr('data-action', 'pickerSwitch').attr('colspan', (options.calendarWeeks ? '6' : '5')))
-                            .append($('<th>').addClass('next').attr('data-action', 'next')
-                                .append($('<span>').addClass(options.icons.next))
-                                )
-                            ),
+                var headerContainer = $('<div>').addClass('datepicker-header-container')
+                  .append($('<div>').addClass('prev').attr('data-action', 'previous')
+                    .append($('<span>').addClass(options.icons.previous))
+                  )
+                  .append($('<div>').addClass('picker-switch').attr('data-action', 'pickerSwitch').attr('colspan', (options.calendarWeeks ? '6' : '5')))
+                  .append($('<div>').addClass('next').attr('data-action', 'next')
+                    .append($('<span>').addClass(options.icons.next))
+                  ),
+                  th = $('<th>').attr('colspan', (options.calendarWeeks ? '8' : '7')).append(
+                  headerContainer
+                ),
+                  headTemplate = $('<thead>')
+                        .append($('<tr>').append(th)),
                     contTemplate = $('<tbody>')
                         .append($('<tr>')
                             .append($('<td>').attr('colspan', (options.calendarWeeks ? '8' : '7')))
